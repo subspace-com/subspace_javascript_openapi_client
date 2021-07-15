@@ -1,46 +1,23 @@
 {
-  "name": "subspace_product_api",
-  "version": "1.0",
-  "description": "_IntroductionThe_Subspace_API_is_based_on_REST_has_resource_oriented_URLs_returns_JSON_encoded_responses_and_returns_standardHTTP_response_codes_The_base_URL_for_the_API_is_https__api_subspace_com__Naming_ConventionEARLY_ACCESS_NOTE_There_is_no_stable_version_yet___Once_there_is_the_version_name_stable_will_be_used_to_access_the_latest_stable_API_version____Example_https__api_subspace_com_stable_Version_name_currently_in_use_is_v1___Example_https__api_subspace_com_v1_Authentication_API_TokensSubspace_authenticates_your_API_requests_using_JWT_Bearer_tokens___The_provided_client_library_requires_this_JWT_to_be_set_before_it_can_be_used_by_setting_the_local_access_token_in_the_local_configuration___This_is_done_by_updating_the_configuration_line_marked_YOUR_ACCESS_TOKEN_by_replacing_the_text_YOUR_ACCESS_TOKEN_with_your_JWT_Bearer_token_Bearer_tokens_are_granted_by_requesting_one__as_noted_below_and_presenting_your_publishable__client_id_and_secret__client_secret_tokens____Subspace_provides_two_types_of_API_tokens_publishable__client_id_and_secret__client_secret___These_are_available_in_the_Subspace_console____Publishable_API_tokens__client_id_are_meant_solely_to_identify_your_account_with_Subspace_they_arent_secret__They_can_be_published_in_places_like_your_website_JavaScript_code_or_in_an_iPhone_or_Android_app____Secret_API_tokens__client_secret_should_be_kept_confidential_and_only_stored_on_your_own_servers__Your_accounts_secret_API_token_will_allow_you_to_acquire_a_valid_JWT_token_authorized_to_perform_any_API_request_to_Subspace__Getting_a_JWT_Bearer_TokenSubspace_uses_auth0_for_JWT_token_management___You_can_acquire_a_JWT_token_by_utilizing_https__id_subspace_com_and_following_the_instructions_in_the_curl_example_below__Protecting_Your_API_Tokens___JWT_tokens_have_a_expiration_time_of_24_hours___Once_expired_you_will_have_to_use_your_Subspace_private_API_and_public_token_to_request_a_new_one____The_Subspace_private_token_can_be_rotated_from_within_the_Subspace_console___Rotation_may_take_up_to_10_minutes_for_all_systems_to_update_state_to_invalidate_the_older_token_and_enable_the_new_one__Keep_your_secret_token_safe__Your_secret_token_can_make_any_API_call_on_behalf_of_your_account_including_changes_that_may_impact_billing_such_as_enabling_pay_as_you_go_charges__Do_not_store_your_secret_token_in_your_version_control_system__Do_not_use_your_secret_token_outside_your_web_server_such_as_a_browser_mobile_app_or_distributed_file____You_may_use_the_Subspace_console_to_acquire_an_API_token___You_may_use_the_Subspace_console_to_disable_pay_as_you_go__This_may_prevent_unexpected_charges_due_to_unauthorized_or_abnormal_usage_Acquiring_a_valid_JWTCommand_line_examplecurl___request_POST____________url_https__id_subspace_com_oauth_token____________header_content_type_application_json____________data__client_id_YOURCLIENTID_client_secret_YOURCLIENTSECRET_audience_https__api_subspace_com__grant_type_client_credentials_",
-  "license": "CC BY-NC-ND 4.0",
-  "main": "dist/index.js",
+  "name": "@subspaceinc/javascript-client",
+  "version": "1.0.0",
+  "description": "API client library to automate and integrate with Subspace services",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
   "scripts": {
-    "build": "babel src -d dist",
-    "prepare": "npm run build",
-    "test": "mocha --require @babel/register --recursive"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "browser": {
-    "fs": false
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subspace-com/subspace_javascript_openapi_client.git"
   },
-  "dependencies": {
-    "@babel/cli": "^7.0.0",
-    "superagent": "^5.3.0"
+  "author": "Subspace Inc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subspace-com/subspace_javascript_openapi_client/issues"
   },
-  "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-decorators": "^7.0.0",
-    "@babel/plugin-proposal-do-expressions": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
-    "@babel/plugin-proposal-function-bind": "^7.0.0",
-    "@babel/plugin-proposal-function-sent": "^7.0.0",
-    "@babel/plugin-proposal-json-strings": "^7.0.0",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0",
-    "expect.js": "^0.3.1",
-    "mocha": "^8.0.1",
-    "sinon": "^7.2.0"
-  },
-  "files": [
-    "dist"
-  ]
+  "homepage": "https://github.com/subspace-com/subspace_javascript_openapi_client#readme"
 }
