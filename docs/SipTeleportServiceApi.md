@@ -23,13 +23,13 @@ CreateSipTeleport creates a new SIP Teleport
 ### Example
 
 ```javascript
-import SubspaceProductApi from 'subspace_product_api';
-let defaultClient = SubspaceProductApi.ApiClient.instance;
+import { ApiClient, SipTeleportServiceApi } from '@subspace-inc/javascript-client';
+let defaultClient = ApiClient.instance;
 // Configure OAuth2 access token for authorization: accessCode
 let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SubspaceProductApi.SipTeleportServiceApi();
+let apiInstance = new SipTeleportServiceApi();
 apiInstance.sipTeleportServiceCreate((error, data, response) => {
   if (error) {
     console.error(error);
@@ -68,13 +68,13 @@ DeleteSipTeleport deletes an existing SIP Teleport, specified by its id
 ### Example
 
 ```javascript
-import SubspaceProductApi from 'subspace_product_api';
-let defaultClient = SubspaceProductApi.ApiClient.instance;
+import { ApiClient, SipTeleportServiceApi } from '@subspace-inc/javascript-client';
+let defaultClient = ApiClient.instance;
 // Configure OAuth2 access token for authorization: accessCode
 let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SubspaceProductApi.SipTeleportServiceApi();
+let apiInstance = new SipTeleportServiceApi();
 let id = "id_example"; // String | 
 apiInstance.sipTeleportServiceDelete(id, (error, data, response) => {
   if (error) {
@@ -117,13 +117,13 @@ GetSipTeleport fetches the details of a specific SIP Teleport, specified by its 
 ### Example
 
 ```javascript
-import SubspaceProductApi from 'subspace_product_api';
-let defaultClient = SubspaceProductApi.ApiClient.instance;
+import { ApiClient, SipTeleportServiceApi } from '@subspace-inc/javascript-client';
+let defaultClient = ApiClient.instance;
 // Configure OAuth2 access token for authorization: accessCode
 let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SubspaceProductApi.SipTeleportServiceApi();
+let apiInstance = new SipTeleportServiceApi();
 let id = "id_example"; // String | 
 apiInstance.sipTeleportServiceGet(id, (error, data, response) => {
   if (error) {
@@ -166,13 +166,13 @@ ListSipTeleports lists all SIP Teleports
 ### Example
 
 ```javascript
-import SubspaceProductApi from 'subspace_product_api';
-let defaultClient = SubspaceProductApi.ApiClient.instance;
+import { ApiClient, SipTeleportServiceApi } from '@subspace-inc/javascript-client';
+let defaultClient = ApiClient.instance;
 // Configure OAuth2 access token for authorization: accessCode
 let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SubspaceProductApi.SipTeleportServiceApi();
+let apiInstance = new SipTeleportServiceApi();
 let opts = {
   'before': "before_example", // String | 
   'limit': 789 // Number | 
@@ -219,13 +219,13 @@ UpdateSipTeleport updates an existing SIP Teleport, specified by its id
 ### Example
 
 ```javascript
-import SubspaceProductApi from 'subspace_product_api';
-let defaultClient = SubspaceProductApi.ApiClient.instance;
+import { ApiClient, SipTeleportServiceApi } from '@subspace-inc/javascript-client';
+let defaultClient = ApiClient.instance;
 // Configure OAuth2 access token for authorization: accessCode
 let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SubspaceProductApi.SipTeleportServiceApi();
+let apiInstance = new SipTeleportServiceApi();
 let id = "id_example"; // String | 
 apiInstance.sipTeleportServiceUpdate(id, (error, data, response) => {
   if (error) {

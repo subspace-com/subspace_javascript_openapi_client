@@ -66,7 +66,7 @@ To publish the library as a [npm](https://www.npmjs.com/), please follow the pro
 Then install it via:
 
 ```shell
-npm install subspace_product_api --save
+npm install @subspaceinc/javascript-client --save
 ```
 
 Finally, you need to build the module:
@@ -145,17 +145,17 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var SubspaceProductApi = require('subspace_product_api');
+import { ApiClient, AcceleratorServiceAPI, Body } from '@subspaceinc/javascript-client'
 
-var defaultClient = SubspaceProductApi.ApiClient.instance;
+var defaultClient = ApiClient.instance;
 // Configure OAuth2 access token for authorization: accessCode
 var accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = "YOUR ACCESS TOKEN"
 
-var api = new SubspaceProductApi.AcceleratorServiceApi()
-var body = new SubspaceProductApi.Body(); // {Body} Required parameters to create a new PacketAccelerator.  NOTE- only subspace_port is optional
+var api = new AcceleratorServiceApi()
+var body = new Body(); // {Body} Required parameters to create a new PacketAccelerator.  NOTE- only subspace_port is optional
 var opts = {
-  'idempotencyKey': "idempotencyKey_example" // {String} Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing accelerator is returned with the status code of 200
+  'idempotencyKey': "idempotencyKey_example" // {String} Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing accelerator is returned with the status code of 200.  This is optional.
 };
 var callback = function(error, data, response) {
   if (error) {
