@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**data** | [**[V1SipTeleportResponse]**](V1SipTeleportResponse.md) |  | [optional] 
 **nextPage** | [**V1NextPage**](V1NextPage.md) |  | [optional] 
-**sipTeleports** | [**[V1SipTeleportResponse]**](V1SipTeleportResponse.md) |  | [optional] 
 
 
