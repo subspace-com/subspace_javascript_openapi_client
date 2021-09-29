@@ -12,20 +12,22 @@
  */
 
 import ApiClient from '../ApiClient';
+import V1NextPage from './V1NextPage';
+import V1Project from './V1Project';
 
 /**
- * The V1Accelerator model module.
- * @module model/V1Accelerator
+ * The V1ListProjectsResponse model module.
+ * @module model/V1ListProjectsResponse
  * @version 1.0
  */
-class V1Accelerator {
+class V1ListProjectsResponse {
     /**
-     * Constructs a new <code>V1Accelerator</code>.
-     * @alias module:model/V1Accelerator
+     * Constructs a new <code>V1ListProjectsResponse</code>.
+     * @alias module:model/V1ListProjectsResponse
      */
     constructor() { 
         
-        V1Accelerator.initialize(this);
+        V1ListProjectsResponse.initialize(this);
     }
 
     /**
@@ -37,33 +39,21 @@ class V1Accelerator {
     }
 
     /**
-     * Constructs a <code>V1Accelerator</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>V1ListProjectsResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/V1Accelerator} obj Optional instance to populate.
-     * @return {module:model/V1Accelerator} The populated <code>V1Accelerator</code> instance.
+     * @param {module:model/V1ListProjectsResponse} obj Optional instance to populate.
+     * @return {module:model/V1ListProjectsResponse} The populated <code>V1ListProjectsResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new V1Accelerator();
+            obj = obj || new V1ListProjectsResponse();
 
-            if (data.hasOwnProperty('destination_ip')) {
-                obj['destination_ip'] = ApiClient.convertToType(data['destination_ip'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [V1Project]);
             }
-            if (data.hasOwnProperty('destination_port')) {
-                obj['destination_port'] = ApiClient.convertToType(data['destination_port'], 'Number');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_ipv4')) {
-                obj['subspace_ipv4'] = ApiClient.convertToType(data['subspace_ipv4'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_port')) {
-                obj['subspace_port'] = ApiClient.convertToType(data['subspace_port'], 'Number');
+            if (data.hasOwnProperty('next_page')) {
+                obj['next_page'] = V1NextPage.constructFromObject(data['next_page']);
             }
         }
         return obj;
@@ -73,39 +63,19 @@ class V1Accelerator {
 }
 
 /**
- * @member {String} destination_ip
+ * @member {Array.<module:model/V1Project>} data
  */
-V1Accelerator.prototype['destination_ip'] = undefined;
+V1ListProjectsResponse.prototype['data'] = undefined;
 
 /**
- * @member {Number} destination_port
+ * @member {module:model/V1NextPage} next_page
  */
-V1Accelerator.prototype['destination_port'] = undefined;
-
-/**
- * @member {String} id
- */
-V1Accelerator.prototype['id'] = undefined;
-
-/**
- * @member {String} name
- */
-V1Accelerator.prototype['name'] = undefined;
-
-/**
- * @member {String} subspace_ipv4
- */
-V1Accelerator.prototype['subspace_ipv4'] = undefined;
-
-/**
- * @member {Number} subspace_port
- */
-V1Accelerator.prototype['subspace_port'] = undefined;
+V1ListProjectsResponse.prototype['next_page'] = undefined;
 
 
 
 
 
 
-export default V1Accelerator;
+export default V1ListProjectsResponse;
 

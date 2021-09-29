@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The V1Accelerator model module.
- * @module model/V1Accelerator
+ * The V1Project model module.
+ * @module model/V1Project
  * @version 1.0
  */
-class V1Accelerator {
+class V1Project {
     /**
-     * Constructs a new <code>V1Accelerator</code>.
-     * @alias module:model/V1Accelerator
+     * Constructs a new <code>V1Project</code>.
+     * @alias module:model/V1Project
      */
     constructor() { 
         
-        V1Accelerator.initialize(this);
+        V1Project.initialize(this);
     }
 
     /**
@@ -37,33 +37,39 @@ class V1Accelerator {
     }
 
     /**
-     * Constructs a <code>V1Accelerator</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>V1Project</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/V1Accelerator} obj Optional instance to populate.
-     * @return {module:model/V1Accelerator} The populated <code>V1Accelerator</code> instance.
+     * @param {module:model/V1Project} obj Optional instance to populate.
+     * @return {module:model/V1Project} The populated <code>V1Project</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new V1Accelerator();
+            obj = obj || new V1Project();
 
-            if (data.hasOwnProperty('destination_ip')) {
-                obj['destination_ip'] = ApiClient.convertToType(data['destination_ip'], 'String');
-            }
-            if (data.hasOwnProperty('destination_port')) {
-                obj['destination_port'] = ApiClient.convertToType(data['destination_port'], 'Number');
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('subspace_ipv4')) {
-                obj['subspace_ipv4'] = ApiClient.convertToType(data['subspace_ipv4'], 'String');
+            if (data.hasOwnProperty('accelerator_quota')) {
+                obj['accelerator_quota'] = ApiClient.convertToType(data['accelerator_quota'], 'Number');
             }
-            if (data.hasOwnProperty('subspace_port')) {
-                obj['subspace_port'] = ApiClient.convertToType(data['subspace_port'], 'Number');
+            if (data.hasOwnProperty('accelerator_request_port')) {
+                obj['accelerator_request_port'] = ApiClient.convertToType(data['accelerator_request_port'], 'Boolean');
+            }
+            if (data.hasOwnProperty('globalturn_limit_gb')) {
+                obj['globalturn_limit_gb'] = ApiClient.convertToType(data['globalturn_limit_gb'], 'Number');
+            }
+            if (data.hasOwnProperty('sipteleport_quota')) {
+                obj['sipteleport_quota'] = ApiClient.convertToType(data['sipteleport_quota'], 'Number');
+            }
+            if (data.hasOwnProperty('sipteleport_call_quota')) {
+                obj['sipteleport_call_quota'] = ApiClient.convertToType(data['sipteleport_call_quota'], 'Number');
+            }
+            if (data.hasOwnProperty('rtpspeed_limit_gb')) {
+                obj['rtpspeed_limit_gb'] = ApiClient.convertToType(data['rtpspeed_limit_gb'], 'Number');
             }
         }
         return obj;
@@ -73,39 +79,49 @@ class V1Accelerator {
 }
 
 /**
- * @member {String} destination_ip
- */
-V1Accelerator.prototype['destination_ip'] = undefined;
-
-/**
- * @member {Number} destination_port
- */
-V1Accelerator.prototype['destination_port'] = undefined;
-
-/**
  * @member {String} id
  */
-V1Accelerator.prototype['id'] = undefined;
+V1Project.prototype['id'] = undefined;
 
 /**
  * @member {String} name
  */
-V1Accelerator.prototype['name'] = undefined;
+V1Project.prototype['name'] = undefined;
 
 /**
- * @member {String} subspace_ipv4
+ * @member {Number} accelerator_quota
  */
-V1Accelerator.prototype['subspace_ipv4'] = undefined;
+V1Project.prototype['accelerator_quota'] = undefined;
 
 /**
- * @member {Number} subspace_port
+ * @member {Boolean} accelerator_request_port
  */
-V1Accelerator.prototype['subspace_port'] = undefined;
+V1Project.prototype['accelerator_request_port'] = undefined;
+
+/**
+ * @member {Number} globalturn_limit_gb
+ */
+V1Project.prototype['globalturn_limit_gb'] = undefined;
+
+/**
+ * @member {Number} sipteleport_quota
+ */
+V1Project.prototype['sipteleport_quota'] = undefined;
+
+/**
+ * @member {Number} sipteleport_call_quota
+ */
+V1Project.prototype['sipteleport_call_quota'] = undefined;
+
+/**
+ * @member {Number} rtpspeed_limit_gb
+ */
+V1Project.prototype['rtpspeed_limit_gb'] = undefined;
 
 
 
 
 
 
-export default V1Accelerator;
+export default V1Project;
 

@@ -14,18 +14,20 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The V1Accelerator model module.
- * @module model/V1Accelerator
+ * The V1CreateSipTeleport model module.
+ * @module model/V1CreateSipTeleport
  * @version 1.0
  */
-class V1Accelerator {
+class V1CreateSipTeleport {
     /**
-     * Constructs a new <code>V1Accelerator</code>.
-     * @alias module:model/V1Accelerator
+     * Constructs a new <code>V1CreateSipTeleport</code>.
+     * @alias module:model/V1CreateSipTeleport
+     * @param name {String} Name of SIPTeleport
+     * @param destination {String} Destination of SIPTeleport
      */
-    constructor() { 
+    constructor(name, destination) { 
         
-        V1Accelerator.initialize(this);
+        V1CreateSipTeleport.initialize(this, name, destination);
     }
 
     /**
@@ -33,37 +35,27 @@ class V1Accelerator {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, name, destination) { 
+        obj['name'] = name;
+        obj['destination'] = destination;
     }
 
     /**
-     * Constructs a <code>V1Accelerator</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>V1CreateSipTeleport</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/V1Accelerator} obj Optional instance to populate.
-     * @return {module:model/V1Accelerator} The populated <code>V1Accelerator</code> instance.
+     * @param {module:model/V1CreateSipTeleport} obj Optional instance to populate.
+     * @return {module:model/V1CreateSipTeleport} The populated <code>V1CreateSipTeleport</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new V1Accelerator();
+            obj = obj || new V1CreateSipTeleport();
 
-            if (data.hasOwnProperty('destination_ip')) {
-                obj['destination_ip'] = ApiClient.convertToType(data['destination_ip'], 'String');
-            }
-            if (data.hasOwnProperty('destination_port')) {
-                obj['destination_port'] = ApiClient.convertToType(data['destination_port'], 'Number');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('subspace_ipv4')) {
-                obj['subspace_ipv4'] = ApiClient.convertToType(data['subspace_ipv4'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_port')) {
-                obj['subspace_port'] = ApiClient.convertToType(data['subspace_port'], 'Number');
+            if (data.hasOwnProperty('destination')) {
+                obj['destination'] = ApiClient.convertToType(data['destination'], 'String');
             }
         }
         return obj;
@@ -73,39 +65,21 @@ class V1Accelerator {
 }
 
 /**
- * @member {String} destination_ip
- */
-V1Accelerator.prototype['destination_ip'] = undefined;
-
-/**
- * @member {Number} destination_port
- */
-V1Accelerator.prototype['destination_port'] = undefined;
-
-/**
- * @member {String} id
- */
-V1Accelerator.prototype['id'] = undefined;
-
-/**
+ * Name of SIPTeleport
  * @member {String} name
  */
-V1Accelerator.prototype['name'] = undefined;
+V1CreateSipTeleport.prototype['name'] = undefined;
 
 /**
- * @member {String} subspace_ipv4
+ * Destination of SIPTeleport
+ * @member {String} destination
  */
-V1Accelerator.prototype['subspace_ipv4'] = undefined;
-
-/**
- * @member {Number} subspace_port
- */
-V1Accelerator.prototype['subspace_port'] = undefined;
+V1CreateSipTeleport.prototype['destination'] = undefined;
 
 
 
 
 
 
-export default V1Accelerator;
+export default V1CreateSipTeleport;
 

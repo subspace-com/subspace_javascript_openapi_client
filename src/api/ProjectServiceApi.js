@@ -11,101 +11,187 @@
  *
  */
 
-import ApiClient from '../ApiClient';
+
+import ApiClient from "../ApiClient";
+import V1ListProjectsResponse from '../model/V1ListProjectsResponse';
+import V1Project from '../model/V1Project';
 
 /**
- * The V1Accelerator model module.
- * @module model/V1Accelerator
- * @version 1.0
- */
-class V1Accelerator {
+* ProjectService service.
+* @module api/ProjectServiceApi
+* @version 1.0
+*/
+export default class ProjectServiceApi {
+
     /**
-     * Constructs a new <code>V1Accelerator</code>.
-     * @alias module:model/V1Accelerator
+    * Constructs a new ProjectServiceApi. 
+    * @alias module:api/ProjectServiceApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
+    }
+
+
+    /**
+     * Callback function to receive the result of the projectServiceCreate operation.
+     * @callback module:api/ProjectServiceApi~projectServiceCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/V1Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    constructor() { 
-        
-        V1Accelerator.initialize(this);
+
+    /**
+     * @param {module:api/ProjectServiceApi~projectServiceCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/V1Project}
+     */
+    projectServiceCreate(callback) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['accessCode'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = V1Project;
+      return this.apiClient.callApi(
+        '/v1/project', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
     }
 
     /**
-     * Initializes the fields of this object.
-     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
-     * Only for internal use.
+     * Callback function to receive the result of the projectServiceGet operation.
+     * @callback module:api/ProjectServiceApi~projectServiceGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/V1Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    static initialize(obj) { 
+
+    /**
+     * @param {String} id 
+     * @param {module:api/ProjectServiceApi~projectServiceGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/V1Project}
+     */
+    projectServiceGet(id, callback) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling projectServiceGet");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['accessCode'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = V1Project;
+      return this.apiClient.callApi(
+        '/v1/project/{id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
     }
 
     /**
-     * Constructs a <code>V1Accelerator</code> from a plain JavaScript object, optionally creating a new instance.
-     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
-     * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/V1Accelerator} obj Optional instance to populate.
-     * @return {module:model/V1Accelerator} The populated <code>V1Accelerator</code> instance.
+     * Callback function to receive the result of the projectServiceList operation.
+     * @callback module:api/ProjectServiceApi~projectServiceListCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/V1ListProjectsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
      */
-    static constructFromObject(data, obj) {
-        if (data) {
-            obj = obj || new V1Accelerator();
 
-            if (data.hasOwnProperty('destination_ip')) {
-                obj['destination_ip'] = ApiClient.convertToType(data['destination_ip'], 'String');
-            }
-            if (data.hasOwnProperty('destination_port')) {
-                obj['destination_port'] = ApiClient.convertToType(data['destination_port'], 'Number');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_ipv4')) {
-                obj['subspace_ipv4'] = ApiClient.convertToType(data['subspace_ipv4'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_port')) {
-                obj['subspace_port'] = ApiClient.convertToType(data['subspace_port'], 'Number');
-            }
-        }
-        return obj;
+    /**
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.before 
+     * @param {Number} opts.limit 
+     * @param {module:api/ProjectServiceApi~projectServiceListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/V1ListProjectsResponse}
+     */
+    projectServiceList(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'before': opts['before'],
+        'limit': opts['limit']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['accessCode'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = V1ListProjectsResponse;
+      return this.apiClient.callApi(
+        '/v1/project', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the projectServiceUpdate operation.
+     * @callback module:api/ProjectServiceApi~projectServiceUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/V1Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} id id is the project identity
+     * @param {module:api/ProjectServiceApi~projectServiceUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/V1Project}
+     */
+    projectServiceUpdate(id, callback) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling projectServiceUpdate");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['accessCode'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = V1Project;
+      return this.apiClient.callApi(
+        '/v1/project/{id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
     }
 
 
 }
-
-/**
- * @member {String} destination_ip
- */
-V1Accelerator.prototype['destination_ip'] = undefined;
-
-/**
- * @member {Number} destination_port
- */
-V1Accelerator.prototype['destination_port'] = undefined;
-
-/**
- * @member {String} id
- */
-V1Accelerator.prototype['id'] = undefined;
-
-/**
- * @member {String} name
- */
-V1Accelerator.prototype['name'] = undefined;
-
-/**
- * @member {String} subspace_ipv4
- */
-V1Accelerator.prototype['subspace_ipv4'] = undefined;
-
-/**
- * @member {Number} subspace_port
- */
-V1Accelerator.prototype['subspace_port'] = undefined;
-
-
-
-
-
-
-export default V1Accelerator;
-

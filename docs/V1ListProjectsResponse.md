@@ -1,10 +1,10 @@
-# SubspaceProductApi.V1ListSipTeleportResponse
+# SubspaceProductApi.V1ListProjectsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[V1SipTeleportResponse]**](V1SipTeleportResponse.md) |  | [optional] 
+**data** | [**[V1Project]**](V1Project.md) |  | [optional] 
 **nextPage** | [**V1NextPage**](V1NextPage.md) |  | [optional] 
 
 

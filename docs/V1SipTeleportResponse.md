@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**destination** | **String** |  | [optional] 
+**teleportEntryPoints** | [**[V1TeleportAddresses]**](V1TeleportAddresses.md) |  | [optional] 
+**status** | [**V1SipTeleportStatus**](V1SipTeleportStatus.md) |  | [optional] 
 **dateCreated** | **Date** |  | [optional] 
 **dateUpdated** | **Date** |  | [optional] 
-**destination** | **String** |  | [optional] 
-**id** | **String** |  | [optional] 
-**status** | [**V1SipTeleportStatus**](V1SipTeleportStatus.md) |  | [optional] 
-**teleportEntryPoints** | [**[V1TeleportAddresses]**](V1TeleportAddresses.md) |  | [optional] 
-**version** | **Number** |  | [optional] 
 
 

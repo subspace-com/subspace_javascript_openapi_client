@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The V1Accelerator model module.
- * @module model/V1Accelerator
+ * The V1GlobalTurnServer model module.
+ * @module model/V1GlobalTurnServer
  * @version 1.0
  */
-class V1Accelerator {
+class V1GlobalTurnServer {
     /**
-     * Constructs a new <code>V1Accelerator</code>.
-     * @alias module:model/V1Accelerator
+     * Constructs a new <code>V1GlobalTurnServer</code>.
+     * @alias module:model/V1GlobalTurnServer
      */
     constructor() { 
         
-        V1Accelerator.initialize(this);
+        V1GlobalTurnServer.initialize(this);
     }
 
     /**
@@ -37,33 +37,27 @@ class V1Accelerator {
     }
 
     /**
-     * Constructs a <code>V1Accelerator</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>V1GlobalTurnServer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/V1Accelerator} obj Optional instance to populate.
-     * @return {module:model/V1Accelerator} The populated <code>V1Accelerator</code> instance.
+     * @param {module:model/V1GlobalTurnServer} obj Optional instance to populate.
+     * @return {module:model/V1GlobalTurnServer} The populated <code>V1GlobalTurnServer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new V1Accelerator();
+            obj = obj || new V1GlobalTurnServer();
 
-            if (data.hasOwnProperty('destination_ip')) {
-                obj['destination_ip'] = ApiClient.convertToType(data['destination_ip'], 'String');
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
-            if (data.hasOwnProperty('destination_port')) {
-                obj['destination_port'] = ApiClient.convertToType(data['destination_port'], 'Number');
+            if (data.hasOwnProperty('credential')) {
+                obj['credential'] = ApiClient.convertToType(data['credential'], 'String');
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_ipv4')) {
-                obj['subspace_ipv4'] = ApiClient.convertToType(data['subspace_ipv4'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_port')) {
-                obj['subspace_port'] = ApiClient.convertToType(data['subspace_port'], 'Number');
+            if (data.hasOwnProperty('urls')) {
+                obj['urls'] = ApiClient.convertToType(data['urls'], 'String');
             }
         }
         return obj;
@@ -73,39 +67,29 @@ class V1Accelerator {
 }
 
 /**
- * @member {String} destination_ip
+ * @member {String} username
  */
-V1Accelerator.prototype['destination_ip'] = undefined;
+V1GlobalTurnServer.prototype['username'] = undefined;
 
 /**
- * @member {Number} destination_port
+ * @member {String} credential
  */
-V1Accelerator.prototype['destination_port'] = undefined;
+V1GlobalTurnServer.prototype['credential'] = undefined;
 
 /**
- * @member {String} id
+ * @member {String} url
  */
-V1Accelerator.prototype['id'] = undefined;
+V1GlobalTurnServer.prototype['url'] = undefined;
 
 /**
- * @member {String} name
+ * @member {String} urls
  */
-V1Accelerator.prototype['name'] = undefined;
-
-/**
- * @member {String} subspace_ipv4
- */
-V1Accelerator.prototype['subspace_ipv4'] = undefined;
-
-/**
- * @member {Number} subspace_port
- */
-V1Accelerator.prototype['subspace_port'] = undefined;
+V1GlobalTurnServer.prototype['urls'] = undefined;
 
 
 
 
 
 
-export default V1Accelerator;
+export default V1GlobalTurnServer;
 

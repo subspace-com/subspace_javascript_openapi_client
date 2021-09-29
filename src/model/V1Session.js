@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The V1Accelerator model module.
- * @module model/V1Accelerator
+ * The V1Session model module.
+ * @module model/V1Session
  * @version 1.0
  */
-class V1Accelerator {
+class V1Session {
     /**
-     * Constructs a new <code>V1Accelerator</code>.
-     * @alias module:model/V1Accelerator
+     * Constructs a new <code>V1Session</code>.
+     * @alias module:model/V1Session
      */
     constructor() { 
         
-        V1Accelerator.initialize(this);
+        V1Session.initialize(this);
     }
 
     /**
@@ -37,30 +37,24 @@ class V1Accelerator {
     }
 
     /**
-     * Constructs a <code>V1Accelerator</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>V1Session</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/V1Accelerator} obj Optional instance to populate.
-     * @return {module:model/V1Accelerator} The populated <code>V1Accelerator</code> instance.
+     * @param {module:model/V1Session} obj Optional instance to populate.
+     * @return {module:model/V1Session} The populated <code>V1Session</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new V1Accelerator();
+            obj = obj || new V1Session();
 
-            if (data.hasOwnProperty('destination_ip')) {
-                obj['destination_ip'] = ApiClient.convertToType(data['destination_ip'], 'String');
+            if (data.hasOwnProperty('client_ip')) {
+                obj['client_ip'] = ApiClient.convertToType(data['client_ip'], 'String');
             }
-            if (data.hasOwnProperty('destination_port')) {
-                obj['destination_port'] = ApiClient.convertToType(data['destination_port'], 'Number');
+            if (data.hasOwnProperty('client_port')) {
+                obj['client_port'] = ApiClient.convertToType(data['client_port'], 'Number');
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('subspace_ipv4')) {
-                obj['subspace_ipv4'] = ApiClient.convertToType(data['subspace_ipv4'], 'String');
+            if (data.hasOwnProperty('subspace_ip')) {
+                obj['subspace_ip'] = ApiClient.convertToType(data['subspace_ip'], 'String');
             }
             if (data.hasOwnProperty('subspace_port')) {
                 obj['subspace_port'] = ApiClient.convertToType(data['subspace_port'], 'Number');
@@ -73,39 +67,29 @@ class V1Accelerator {
 }
 
 /**
- * @member {String} destination_ip
+ * @member {String} client_ip
  */
-V1Accelerator.prototype['destination_ip'] = undefined;
+V1Session.prototype['client_ip'] = undefined;
 
 /**
- * @member {Number} destination_port
+ * @member {Number} client_port
  */
-V1Accelerator.prototype['destination_port'] = undefined;
+V1Session.prototype['client_port'] = undefined;
 
 /**
- * @member {String} id
+ * @member {String} subspace_ip
  */
-V1Accelerator.prototype['id'] = undefined;
-
-/**
- * @member {String} name
- */
-V1Accelerator.prototype['name'] = undefined;
-
-/**
- * @member {String} subspace_ipv4
- */
-V1Accelerator.prototype['subspace_ipv4'] = undefined;
+V1Session.prototype['subspace_ip'] = undefined;
 
 /**
  * @member {Number} subspace_port
  */
-V1Accelerator.prototype['subspace_port'] = undefined;
+V1Session.prototype['subspace_port'] = undefined;
 
 
 
 
 
 
-export default V1Accelerator;
+export default V1Session;
 
