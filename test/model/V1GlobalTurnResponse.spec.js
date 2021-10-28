@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property ttl (base name: "ttl")', function() {
+      // uncomment below and update the code to test the property ttl
+      //var instance = new SubspaceProductApi.V1GlobalTurnResponse();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -175,7 +175,8 @@ accessCode.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new SubspaceProductApi.AcceleratorServiceApi();
 let opts = {
   'before': "before_example", // String | 
-  'limit': 789 // Number | 
+  'limit': 789, // Number | 
+  'name': "name_example" // String | 
 };
 apiInstance.acceleratorServiceList(opts, (error, data, response) => {
   if (error) {
@@ -193,6 +194,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **before** | **String**|  | [optional] 
  **limit** | **Number**|  | [optional] 
+ **name** | **String**|  | [optional] 
 
 ### Return type
 

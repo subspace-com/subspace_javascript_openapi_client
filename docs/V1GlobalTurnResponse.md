@@ -5,5 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **iceServers** | [**[V1GlobalTurnServer]**](V1GlobalTurnServer.md) |  | [optional] 
+**ttl** | **Number** |  | [optional] 
 
 

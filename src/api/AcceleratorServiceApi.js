@@ -175,6 +175,7 @@ export default class AcceleratorServiceApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.before 
      * @param {Number} opts.limit 
+     * @param {String} opts.name 
      * @param {module:api/AcceleratorServiceApi~acceleratorServiceListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/V1ListAcceleratorResponse}
      */
@@ -186,7 +187,8 @@ export default class AcceleratorServiceApi {
       };
       let queryParams = {
         'before': opts['before'],
-        'limit': opts['limit']
+        'limit': opts['limit'],
+        'name': opts['name']
       };
       let headerParams = {
       };

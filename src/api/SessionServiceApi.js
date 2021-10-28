@@ -81,5 +81,52 @@ export default class SessionServiceApi {
       );
     }
 
+    /**
+     * Callback function to receive the result of the sessionServiceList2 operation.
+     * @callback module:api/SessionServiceApi~sessionServiceList2Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/V1ListSessionsResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} acceleratorId 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.before 
+     * @param {Number} opts.limit 
+     * @param {module:api/SessionServiceApi~sessionServiceList2Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/V1ListSessionsResponse}
+     */
+    sessionServiceList2(acceleratorId, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'acceleratorId' is set
+      if (acceleratorId === undefined || acceleratorId === null) {
+        throw new Error("Missing the required parameter 'acceleratorId' when calling sessionServiceList2");
+      }
+
+      let pathParams = {
+        'accelerator_id': acceleratorId
+      };
+      let queryParams = {
+        'before': opts['before'],
+        'limit': opts['limit']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['accessCode'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = V1ListSessionsResponse;
+      return this.apiClient.callApi(
+        '/v1/accelerators/{accelerator_id}/sessions', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
 
 }
