@@ -51,6 +51,9 @@ class V1GlobalTurnResponse {
             if (data.hasOwnProperty('ice_servers')) {
                 obj['ice_servers'] = ApiClient.convertToType(data['ice_servers'], [V1GlobalTurnServer]);
             }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+            }
         }
         return obj;
     }
@@ -62,6 +65,11 @@ class V1GlobalTurnResponse {
  * @member {Array.<module:model/V1GlobalTurnServer>} ice_servers
  */
 V1GlobalTurnResponse.prototype['ice_servers'] = undefined;
+
+/**
+ * @member {Number} ttl
+ */
+V1GlobalTurnResponse.prototype['ttl'] = undefined;
 
 
 

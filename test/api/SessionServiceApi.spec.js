@@ -58,6 +58,16 @@
         done();
       });
     });
+    describe('sessionServiceList2', function() {
+      it('should call sessionServiceList2 successfully', function(done) {
+        //uncomment below and update the code to test sessionServiceList2
+        //instance.sessionServiceList2(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

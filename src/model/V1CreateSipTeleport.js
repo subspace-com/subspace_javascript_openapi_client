@@ -57,6 +57,9 @@ class V1CreateSipTeleport {
             if (data.hasOwnProperty('destination')) {
                 obj['destination'] = ApiClient.convertToType(data['destination'], 'String');
             }
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
         }
         return obj;
     }
@@ -75,6 +78,12 @@ V1CreateSipTeleport.prototype['name'] = undefined;
  * @member {String} destination
  */
 V1CreateSipTeleport.prototype['destination'] = undefined;
+
+/**
+ * Enum: [ ENABLED, DISABLED ]
+ * @member {String} status
+ */
+V1CreateSipTeleport.prototype['status'] = undefined;
 
 
 

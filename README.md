@@ -250,6 +250,7 @@ Class | Method | HTTP request | Description
 *SubspaceProductApi.ProjectServiceApi* | [**projectServiceList**](docs/ProjectServiceApi.md#projectServiceList) | **GET** /v1/project | 
 *SubspaceProductApi.ProjectServiceApi* | [**projectServiceUpdate**](docs/ProjectServiceApi.md#projectServiceUpdate) | **PUT** /v1/project/{id} | 
 *SubspaceProductApi.SessionServiceApi* | [**sessionServiceList**](docs/SessionServiceApi.md#sessionServiceList) | **GET** /v1/accelerator/{accelerator_id}/session | 
+*SubspaceProductApi.SessionServiceApi* | [**sessionServiceList2**](docs/SessionServiceApi.md#sessionServiceList2) | **GET** /v1/accelerators/{accelerator_id}/sessions | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceCreate**](docs/SipTeleportServiceApi.md#sipTeleportServiceCreate) | **POST** /v1/sipteleport | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceDelete**](docs/SipTeleportServiceApi.md#sipTeleportServiceDelete) | **DELETE** /v1/sipteleport/{id} | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceGet**](docs/SipTeleportServiceApi.md#sipTeleportServiceGet) | **GET** /v1/sipteleport/{id} | 
