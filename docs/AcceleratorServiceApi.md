@@ -28,7 +28,7 @@ let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new SubspaceProductApi.AcceleratorServiceApi();
-let body = new SubspaceProductApi.Body(); // Body | Required parameters to create a new PacketAccelerator.  NOTE- only subspace_port is optional
+let body = new SubspaceProductApi.Body(); // Body | Required parameters to create a new PacketAccelerator.
 let opts = {
   'idempotencyKey': "idempotencyKey_example" // String | Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing accelerator is returned with the status code of 200
 };
@@ -46,7 +46,7 @@ apiInstance.acceleratorServiceCreate(body, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)| Required parameters to create a new PacketAccelerator.  NOTE- only subspace_port is optional | 
+ **body** | [**Body**](Body.md)| Required parameters to create a new PacketAccelerator. | 
  **idempotencyKey** | **String**| Value is the returned etag of a get request.  If a retry sends an Idempotency-Key that has been seen before, the existing accelerator is returned with the status code of 200 | [optional] 
 
 ### Return type
@@ -227,7 +227,7 @@ accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new SubspaceProductApi.AcceleratorServiceApi();
 let id = "id_example"; // String | 
-let body1 = new SubspaceProductApi.Body1(); // Body1 | Parameters to update an existing PacketAccelerator, minimum requirement of one of them defined to update
+let body1 = new SubspaceProductApi.Body1(); // Body1 | Parameters to update an existing PacketAccelerator
 let opts = {
   'ifMatch': 56 // Number | 
 };
@@ -246,7 +246,7 @@ apiInstance.acceleratorServiceUpdate(id, body1, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body1** | [**Body1**](Body1.md)| Parameters to update an existing PacketAccelerator, minimum requirement of one of them defined to update | 
+ **body1** | [**Body1**](Body1.md)| Parameters to update an existing PacketAccelerator | 
  **ifMatch** | **Number**|  | [optional] 
 
 ### Return type
