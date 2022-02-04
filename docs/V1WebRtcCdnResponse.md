@@ -1,10 +1,10 @@
-# SubspaceProductApi.V1GlobalTurnResponse
+# SubspaceProductApi.V1WebRtcCdnResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**iceServers** | [**[V1GlobalTurnServer]**](V1GlobalTurnServer.md) |  | [optional] 
+**iceServers** | [**[V1WebRtcCdnServer]**](V1WebRtcCdnServer.md) |  | [optional] 
 **ttl** | **Number** |  | [optional] 
 
 

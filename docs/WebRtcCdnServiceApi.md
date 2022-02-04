@@ -1,16 +1,16 @@
-# SubspaceProductApi.GlobalTurnServiceApi
+# SubspaceProductApi.WebRtcCdnServiceApi
 
 All URIs are relative to *https://api.subspace.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**globalTurnServiceGetGlobalTurn**](GlobalTurnServiceApi.md#globalTurnServiceGetGlobalTurn) | **POST** /v1/globalturn | 
+[**webRtcCdnServiceGetWebRtcCdn**](WebRtcCdnServiceApi.md#webRtcCdnServiceGetWebRtcCdn) | **POST** /v1/webrtc-cdn | 
 
 
 
-## globalTurnServiceGetGlobalTurn
+## webRtcCdnServiceGetWebRtcCdn
 
-> V1GlobalTurnResponse globalTurnServiceGetGlobalTurn()
+> V1WebRtcCdnResponse webRtcCdnServiceGetWebRtcCdn()
 
 
 
@@ -23,8 +23,8 @@ let defaultClient = SubspaceProductApi.ApiClient.instance;
 let accessCode = defaultClient.authentications['accessCode'];
 accessCode.accessToken = 'YOUR ACCESS TOKEN';
 
-let apiInstance = new SubspaceProductApi.GlobalTurnServiceApi();
-apiInstance.globalTurnServiceGetGlobalTurn((error, data, response) => {
+let apiInstance = new SubspaceProductApi.WebRtcCdnServiceApi();
+apiInstance.webRtcCdnServiceGetWebRtcCdn((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**V1GlobalTurnResponse**](V1GlobalTurnResponse.md)
+[**V1WebRtcCdnResponse**](V1WebRtcCdnResponse.md)
 
 ### Authorization
 

@@ -11,48 +11,63 @@
  *
  */
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD.
-    define(['expect.js', process.cwd()+'/src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require(process.cwd()+'/src/index'));
-  } else {
-    // Browser globals (root is window)
-    factory(root.expect, root.SubspaceProductApi);
-  }
-}(this, function(expect, SubspaceProductApi) {
-  'use strict';
 
-  var instance;
+import ApiClient from "../ApiClient";
+import V1WebRtcCdnResponse from '../model/V1WebRtcCdnResponse';
 
-  beforeEach(function() {
-  });
+/**
+* WebRtcCdnService service.
+* @module api/WebRtcCdnServiceApi
+* @version 1.0
+*/
+export default class WebRtcCdnServiceApi {
 
-  var getProperty = function(object, getter, property) {
-    // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+    /**
+    * Constructs a new WebRtcCdnServiceApi. 
+    * @alias module:api/WebRtcCdnServiceApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
+    constructor(apiClient) {
+        this.apiClient = apiClient || ApiClient.instance;
+    }
 
-  var setProperty = function(object, setter, property, value) {
-    // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
 
-  describe('V1TransportType', function() {
-    it('should create an instance of V1TransportType', function() {
-      // uncomment below and update the code to test V1TransportType
-      //var instance = new SubspaceProductApi.V1TransportType();
-      //expect(instance).to.be.a(SubspaceProductApi.V1TransportType);
-    });
+    /**
+     * Callback function to receive the result of the webRtcCdnServiceGetWebRtcCdn operation.
+     * @callback module:api/WebRtcCdnServiceApi~webRtcCdnServiceGetWebRtcCdnCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/V1WebRtcCdnResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
 
-  });
+    /**
+     * @param {module:api/WebRtcCdnServiceApi~webRtcCdnServiceGetWebRtcCdnCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/V1WebRtcCdnResponse}
+     */
+    webRtcCdnServiceGetWebRtcCdn(callback) {
+      let postBody = null;
 
-}));
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['accessCode'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = V1WebRtcCdnResponse;
+      return this.apiClient.callApi(
+        '/v1/webrtc-cdn', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+
+}

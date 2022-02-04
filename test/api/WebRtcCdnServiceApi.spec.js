@@ -28,6 +28,7 @@
   var instance;
 
   beforeEach(function() {
+    instance = new SubspaceProductApi.WebRtcCdnServiceApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,13 +47,17 @@
       object[property] = value;
   }
 
-  describe('V1TransportType', function() {
-    it('should create an instance of V1TransportType', function() {
-      // uncomment below and update the code to test V1TransportType
-      //var instance = new SubspaceProductApi.V1TransportType();
-      //expect(instance).to.be.a(SubspaceProductApi.V1TransportType);
+  describe('WebRtcCdnServiceApi', function() {
+    describe('webRtcCdnServiceGetWebRtcCdn', function() {
+      it('should call webRtcCdnServiceGetWebRtcCdn successfully', function(done) {
+        //uncomment below and update the code to test webRtcCdnServiceGetWebRtcCdn
+        //instance.webRtcCdnServiceGetWebRtcCdn(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
     });
-
   });
 
 }));

@@ -31,7 +31,7 @@ Subspace uses auth0 for JWT token management.  You can acquire a JWT token by ut
 ## Protecting Your API Tokens
 
   * **JWT tokens have a expiration time of 24 hours.**  Once expired, you will have to use your Subspace private API and public token to request a new one.
-  * The Subspace private token can be rotated from within the Subspace console.  Rotation may take up to 10 minutes for all systems to update state to invalidate the older token and enable the new one.
+  * The Subspace private token can be rotated from within the Subspace console.
   * **Keep your secret token safe.** Your secret token can make any API call on behalf of your account, including changes that may impact billing such as enabling pay-as-you-go charges. Do not store your secret token in your version control system. Do not use your secret token outside your web server, such as a browser, mobile app, or distributed file.
   * **You may use the Subspace console to acquire an API token.**
   * **You may use the Subspace console to disable pay-as-you-go.** This may prevent unexpected charges due to unauthorized or abnormal usage.
@@ -243,12 +243,12 @@ Class | Method | HTTP request | Description
 *SubspaceProductApi.AcceleratorServiceApi* | [**acceleratorServiceGet**](docs/AcceleratorServiceApi.md#acceleratorServiceGet) | **GET** /v1/accelerator/{id} | 
 *SubspaceProductApi.AcceleratorServiceApi* | [**acceleratorServiceList**](docs/AcceleratorServiceApi.md#acceleratorServiceList) | **GET** /v1/accelerator | 
 *SubspaceProductApi.AcceleratorServiceApi* | [**acceleratorServiceUpdate**](docs/AcceleratorServiceApi.md#acceleratorServiceUpdate) | **PUT** /v1/accelerator/{id} | 
-*SubspaceProductApi.GlobalTurnServiceApi* | [**globalTurnServiceGetGlobalTurn**](docs/GlobalTurnServiceApi.md#globalTurnServiceGetGlobalTurn) | **POST** /v1/globalturn | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceCreate**](docs/SipTeleportServiceApi.md#sipTeleportServiceCreate) | **POST** /v1/sipteleport | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceDelete**](docs/SipTeleportServiceApi.md#sipTeleportServiceDelete) | **DELETE** /v1/sipteleport/{id} | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceGet**](docs/SipTeleportServiceApi.md#sipTeleportServiceGet) | **GET** /v1/sipteleport/{id} | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceList**](docs/SipTeleportServiceApi.md#sipTeleportServiceList) | **GET** /v1/sipteleport | 
 *SubspaceProductApi.SipTeleportServiceApi* | [**sipTeleportServiceUpdate**](docs/SipTeleportServiceApi.md#sipTeleportServiceUpdate) | **PUT** /v1/sipteleport/{id} | 
+*SubspaceProductApi.WebRtcCdnServiceApi* | [**webRtcCdnServiceGetWebRtcCdn**](docs/WebRtcCdnServiceApi.md#webRtcCdnServiceGetWebRtcCdn) | **POST** /v1/webrtc-cdn | 
 
 
 ## Documentation for Models
@@ -258,8 +258,6 @@ Class | Method | HTTP request | Description
  - [SubspaceProductApi.ProtobufAny](docs/ProtobufAny.md)
  - [SubspaceProductApi.V1Accelerator](docs/V1Accelerator.md)
  - [SubspaceProductApi.V1CreateSipTeleport](docs/V1CreateSipTeleport.md)
- - [SubspaceProductApi.V1GlobalTurnResponse](docs/V1GlobalTurnResponse.md)
- - [SubspaceProductApi.V1GlobalTurnServer](docs/V1GlobalTurnServer.md)
  - [SubspaceProductApi.V1ListAcceleratorResponse](docs/V1ListAcceleratorResponse.md)
  - [SubspaceProductApi.V1ListSipTeleportResponse](docs/V1ListSipTeleportResponse.md)
  - [SubspaceProductApi.V1NextPage](docs/V1NextPage.md)
@@ -268,6 +266,8 @@ Class | Method | HTTP request | Description
  - [SubspaceProductApi.V1TeleportAddresses](docs/V1TeleportAddresses.md)
  - [SubspaceProductApi.V1TransportType](docs/V1TransportType.md)
  - [SubspaceProductApi.V1UpdateSipTeleport](docs/V1UpdateSipTeleport.md)
+ - [SubspaceProductApi.V1WebRtcCdnResponse](docs/V1WebRtcCdnResponse.md)
+ - [SubspaceProductApi.V1WebRtcCdnServer](docs/V1WebRtcCdnServer.md)
 
 
 ## Documentation for Authorization
@@ -287,7 +287,7 @@ Class | Method | HTTP request | Description
   - sipteleport:read: allows reading details about provisioned SIPTeleport
   - sipteleport:write: allows administration of SIPTeleport
   - projects:read: allows reading details about projects
-  - globalturn:access: allows administration of GlobalTurn
+  - webrtccdn:access: allows administration of WebRTC-CDN
   - rtpspeed:read: allows reading details about rtpspeed
   - rtpspeed:write: allows administration of rtpspeed
 

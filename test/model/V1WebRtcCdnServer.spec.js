@@ -28,6 +28,7 @@
   var instance;
 
   beforeEach(function() {
+    instance = new SubspaceProductApi.V1WebRtcCdnServer();
   });
 
   var getProperty = function(object, getter, property) {
@@ -46,11 +47,29 @@
       object[property] = value;
   }
 
-  describe('V1TransportType', function() {
-    it('should create an instance of V1TransportType', function() {
-      // uncomment below and update the code to test V1TransportType
-      //var instance = new SubspaceProductApi.V1TransportType();
-      //expect(instance).to.be.a(SubspaceProductApi.V1TransportType);
+  describe('V1WebRtcCdnServer', function() {
+    it('should create an instance of V1WebRtcCdnServer', function() {
+      // uncomment below and update the code to test V1WebRtcCdnServer
+      //var instance = new SubspaceProductApi.V1WebRtcCdnServer();
+      //expect(instance).to.be.a(SubspaceProductApi.V1WebRtcCdnServer);
+    });
+
+    it('should have the property username (base name: "username")', function() {
+      // uncomment below and update the code to test the property username
+      //var instance = new SubspaceProductApi.V1WebRtcCdnServer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property credential (base name: "credential")', function() {
+      // uncomment below and update the code to test the property credential
+      //var instance = new SubspaceProductApi.V1WebRtcCdnServer();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property urls (base name: "urls")', function() {
+      // uncomment below and update the code to test the property urls
+      //var instance = new SubspaceProductApi.V1WebRtcCdnServer();
+      //expect(instance).to.be();
     });
 
   });

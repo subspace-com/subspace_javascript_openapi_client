@@ -11,48 +11,70 @@
  *
  */
 
-(function(root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD.
-    define(['expect.js', process.cwd()+'/src/index'], factory);
-  } else if (typeof module === 'object' && module.exports) {
-    // CommonJS-like environments that support module.exports, like Node.
-    factory(require('expect.js'), require(process.cwd()+'/src/index'));
-  } else {
-    // Browser globals (root is window)
-    factory(root.expect, root.SubspaceProductApi);
-  }
-}(this, function(expect, SubspaceProductApi) {
-  'use strict';
+import ApiClient from '../ApiClient';
+import V1WebRtcCdnServer from './V1WebRtcCdnServer';
 
-  var instance;
+/**
+ * The V1WebRtcCdnResponse model module.
+ * @module model/V1WebRtcCdnResponse
+ * @version 1.0
+ */
+class V1WebRtcCdnResponse {
+    /**
+     * Constructs a new <code>V1WebRtcCdnResponse</code>.
+     * @alias module:model/V1WebRtcCdnResponse
+     */
+    constructor() { 
+        
+        V1WebRtcCdnResponse.initialize(this);
+    }
 
-  beforeEach(function() {
-  });
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
+    static initialize(obj) { 
+    }
 
-  var getProperty = function(object, getter, property) {
-    // Use getter method if present; otherwise, get the property directly.
-    if (typeof object[getter] === 'function')
-      return object[getter]();
-    else
-      return object[property];
-  }
+    /**
+     * Constructs a <code>V1WebRtcCdnResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/V1WebRtcCdnResponse} obj Optional instance to populate.
+     * @return {module:model/V1WebRtcCdnResponse} The populated <code>V1WebRtcCdnResponse</code> instance.
+     */
+    static constructFromObject(data, obj) {
+        if (data) {
+            obj = obj || new V1WebRtcCdnResponse();
 
-  var setProperty = function(object, setter, property, value) {
-    // Use setter method if present; otherwise, set the property directly.
-    if (typeof object[setter] === 'function')
-      object[setter](value);
-    else
-      object[property] = value;
-  }
+            if (data.hasOwnProperty('iceServers')) {
+                obj['iceServers'] = ApiClient.convertToType(data['iceServers'], [V1WebRtcCdnServer]);
+            }
+            if (data.hasOwnProperty('ttl')) {
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+            }
+        }
+        return obj;
+    }
 
-  describe('V1TransportType', function() {
-    it('should create an instance of V1TransportType', function() {
-      // uncomment below and update the code to test V1TransportType
-      //var instance = new SubspaceProductApi.V1TransportType();
-      //expect(instance).to.be.a(SubspaceProductApi.V1TransportType);
-    });
 
-  });
+}
 
-}));
+/**
+ * @member {Array.<module:model/V1WebRtcCdnServer>} iceServers
+ */
+V1WebRtcCdnResponse.prototype['iceServers'] = undefined;
+
+/**
+ * @member {Number} ttl
+ */
+V1WebRtcCdnResponse.prototype['ttl'] = undefined;
+
+
+
+
+
+
+export default V1WebRtcCdnResponse;
+
